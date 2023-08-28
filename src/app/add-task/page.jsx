@@ -5,10 +5,7 @@ import Image from 'next/image'
 import { addTask } from '../services/taskService';
 import {toast} from 'react-toastify';
 
-export const metadata={
-    title:"Add Task",
-    description:"You can add task"
-}
+
 const AddTask = () => {
   document.title=metadata.title;
 
