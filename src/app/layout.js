@@ -1,5 +1,10 @@
+import { ToastContainer } from 'react-toastify';
+import CustomNavbar from './components/CustomNavbar'
+import Footer from './components/Footer'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import 'react-toastify/dist/ReactToastify.css';
+import UserProvider from '@/context/userProvider';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,7 +16,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+      <UserProvider>
+      <ToastContainer/>
+        <CustomNavbar/>
+        <div className='mt-2 h-auto'>
+
+        {children}
+        </div>
+      <Footer/>
+      </UserProvider>
+        </body>
     </html>
   )
 }
